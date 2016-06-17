@@ -14,7 +14,6 @@ import android.view.MenuItem;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String ADAPTER = "adapter";
     private EditText etAction;
     private EditText etToBe;
 
