@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,7 +80,6 @@ public class ToBeFragment extends Fragment{
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         RemoveEntry();
-                        mViewPager.setOverScrollMode(0);
                     }
                 });
                 builder.setNegativeButton("Cancel", null);
@@ -89,11 +89,14 @@ public class ToBeFragment extends Fragment{
     }
 
     private void RemoveEntry() {
-        int itemNumber = mViewPager.getCurrentItem();
-        mViewPager.setCurrentItem(mViewPager.getCurrentItem() - 1);
+        int itemNumber = mViewPager.getCurrentItem() - 1;
+        Log.i("rimjob", "RemoveEntry: " + itemNumber);
 
         MainActivity.adapter.removeFragment(itemNumber);
         MainActivity.adapter.notifyDataSetChanged();
+        ToBe.logToBes();
+
+        mViewPager.setCurrentItem(itemNumber);
     }
 
     private void setTobeText(TextView textView) {

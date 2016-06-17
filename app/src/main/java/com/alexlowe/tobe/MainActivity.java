@@ -50,11 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         EntryFragment fragment = new EntryFragment();
-        /*Bundle bundle = new Bundle();
-        bundle.putSerializable(ADAPTER, adapter);
-        fragment.setArguments(bundle);*/
         adapter.addFragment(fragment);
-
         viewPager.setAdapter(adapter);
     }
 

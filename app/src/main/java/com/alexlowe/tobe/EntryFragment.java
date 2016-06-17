@@ -65,6 +65,7 @@ public class EntryFragment extends Fragment {
         adapter.addFragment(fragment);
         adapter.notifyDataSetChanged();
         clear();
+        ToBe.logToBes();
     }
 
     private void clear() {

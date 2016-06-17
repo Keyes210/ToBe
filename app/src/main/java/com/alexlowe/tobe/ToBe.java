@@ -1,5 +1,7 @@
 package com.alexlowe.tobe;
 
+import android.util.Log;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -33,4 +35,16 @@ public class ToBe implements Serializable{
     public void setResult(String result) {
         this.result = result;
     }
+
+    public static void logToBes(){
+        String str = "";
+
+        for(ToBe toBe : shortTerm){
+            str += String.format("Action: %s Result: %s \n", toBe.getAction(), toBe.getResult());
+        }
+
+        Log.i("rimjob", "logToBes: " + str);
+    }
+
+
 }
